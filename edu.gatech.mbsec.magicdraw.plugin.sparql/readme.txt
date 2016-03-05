@@ -1,0 +1,2 @@
+usage of commons-lang-2.3, http://www.findjar.com/jar/commons-lang/jars/commons-lang-2.3.jar.html;jsessionid=B865D9E1B120CA2DA5C5986363CCC431
+usage of j-text-utils-0.3.3.jar, https://code.google.com/p/j-text-utils/downloads/list

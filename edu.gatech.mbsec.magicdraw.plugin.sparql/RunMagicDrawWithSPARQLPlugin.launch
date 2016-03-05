@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/edu.gatech.mbsec.magicdraw.plugin.sparql/src/magicdraw/RunMagicDraw.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="magicdrawinstalldir" value="C:\Program Files\MagicDraw18.0 sp1"/>
+</mapAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="magicdraw.RunMagicDraw"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="edu.gatech.mbsec.magicdraw.plugin.sparql"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx800M -Dinstall.root=&quot;C:\Program Files\MagicDraw18.0 sp1&quot;"/>
+</launchConfiguration>

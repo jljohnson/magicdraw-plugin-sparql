@@ -1,0 +1,29 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX sysml: <http://omg.org/sysml/rdf#> 
+PREFIX sysml_namedelement: <http://omg.org/sysml/rdf#NamedElement/> 
+PREFIX sysml_block: <http://omg.org/sysml/rdf#Block/> 
+PREFIX sysml_property: <http://omg.org/sysml/rdf#Property/> 
+PREFIX sysml_connector: <http://omg.org/sysml/rdf#Connector/> 
+PREFIX sysml_connectorend: <http://omg.org/sysml/rdf#ConnectorEnd/> 
+PREFIX sysml_itemflow: <http://omg.org/sysml/rdf#ItemFlow/> 
+SELECT DISTINCT ?itemFlow ?conveyedBlock ?connector	?connectorEnd1FlowPropertyType ?connectorEnd2FlowPropertyType	
+WHERE {
+	?itemFlow  rdf:type sysml:ItemFlow . 
+	?itemFlow sysml_itemflow:conveyedBlock ?conveyedBlock .
+	?itemFlow sysml_itemflow:realizingConnector ?connector .
+	?connector  sysml_connector:end ?connectorEnd1 . 
+	?connectorEnd1  sysml_connectorend:role ?connectorEnd1Role .
+	?connectorEnd1Role  sysml_property:type ?connectorEnd1Type . 
+	?connector  sysml_connector:end ?connectorEnd2 . 
+	?connectorEnd2  sysml_connectorend:role ?connectorEnd2Role . 
+	?connectorEnd2Role  sysml_property:type ?connectorEnd2Type . 
+	FILTER (?connectorEnd1Role != ?connectorEnd2Role)
+	?connectorEnd1Type sysml_block:flowProperty ?connectorEnd1FlowProperty .
+	?connectorEnd1FlowProperty sysml_property:type ?connectorEnd1FlowPropertyType .
+	?connectorEnd2Type sysml_block:flowProperty ?connectorEnd2FlowProperty .
+	?connectorEnd2FlowProperty sysml_property:type ?connectorEnd2FlowPropertyType .	
+	FILTER (NOT EXISTS { ?conveyedBlock sysml_block:inheritedBlock+ ?connectorEnd1FlowPropertyType }) 
+	FILTER (NOT EXISTS { ?connectorEnd1FlowPropertyType sysml_block:inheritedBlock+ ?conveyedBlock })
+	FILTER (NOT EXISTS { ?conveyedBlock sysml_block:inheritedBlock+ ?connectorEnd2FlowPropertyType }) 
+	FILTER (NOT EXISTS { ?connectorEnd2FlowPropertyType sysml_block:inheritedBlock+ ?conveyedBlock })
+}

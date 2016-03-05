@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX sysml: <http://omg.org/sysml/rdf#> 
+PREFIX sysml_namedelement: <http://omg.org/sysml/rdf#NamedElement/> 
+PREFIX sysml_block: <http://omg.org/sysml/rdf#Block/> 
+PREFIX sysml_property: <http://omg.org/sysml/rdf#Property/> 
+PREFIX sysml_connector: <http://omg.org/sysml/rdf#Connector/> 
+PREFIX sysml_connectorend: <http://omg.org/sysml/rdf#ConnectorEnd/> 
+SELECT ?connector  		
+WHERE {
+	?connector  rdf:type sysml:Connector . 
+}

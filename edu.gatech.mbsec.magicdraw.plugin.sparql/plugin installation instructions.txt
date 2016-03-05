@@ -1,0 +1,20 @@
+MagicDraw SPARQl plugin.
+
+Tested with MagicDraw v18.0 SP1
+
+Copy the "edu.gatech.mbse.magicdraw.sparql" folder
+located in the "MagicDraw Plugin - Folder to copy into MD plugins directory" folder
+into your MagicDraw plugins directory.
+
+Example models will be added later.
+
+Open a MagicDraw model containing constraints describing SPARQL queries
+
+Select the constraint named "SPARQL Select Query: get values of source and target ports of item flows" 
+(the one at the bottom of the list)
+
+
+Right-click on the constraint and select "Execute SPARQL Design Rule"
+
+You should then see details about the query and the query result in the MagicDraw notification window.
+
